@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vegas Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    /* Estilos gerais */
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +20,7 @@
       flex-direction: column;
       min-height: 100vh;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(to bottom, #ffffff, #ffe6f0);
+      background: linear-gradient(to bottom, #ffffff, #ffe4e4);
       color: #1f1f1f;
     }
 
@@ -39,8 +42,6 @@
 
     header img {
       max-height: 100px;
-      height: auto;
-      width: auto;
       object-fit: contain;
     }
 
@@ -65,10 +66,13 @@
     nav a {
       font-size: 18pt;
       text-decoration: none;
-      color: rgb(255, 255, 255);
+      color: white;
       padding: 6px 12px;
       border-radius: 8px;
       transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     nav a:hover {
@@ -79,14 +83,19 @@
     main {
       flex: 1;
       padding: 40px;
+      background: linear-gradient(to bottom right, #fcfcfc, #ffe6f0);
+    }
+
+    .container-principal {
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      background: linear-gradient(to right, #ffffff, #ffe6f0);
+      flex-wrap: wrap;
+      gap: 40px;
+      width: 100%;
     }
 
     .video-top {
-      width: 100%;
+      flex: 1;
+      min-width: 300px;
       max-width: 500px;
     }
 
@@ -96,20 +105,132 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.274);
     }
 
+    .lado-direito {
+      flex: 1;
+      min-width: 1250px;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .texto-apresentacao h1 {
+      font-size: 36px;
+      color: #EA2A7F;
+    }
+
+    .texto-apresentacao h2 {
+      font-size: 24px;
+      color: #8a1248;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .texto-apresentacao p {
+      font-size: 18px;
+      color: #333333;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .banner-promocao {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .banner-promocao h3 {
+      color: #EA2A7F;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .banner-promocao p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #8a1248;
+    }
+
+    .carrossel-imagens {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 15px;
+    }
+
+    .carrossel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carrossel-container img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    button.voltar, button.avançar {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    button.voltar {
+      left: 10px;
+    }
+
+    button.avançar {
+      right: 10px;
+    }
+
+    button.voltar:hover, button.avançar:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
     footer {
       width: 100%;
-      height: 150px;
+      padding: 20px;
+      background: linear-gradient(to right, black, #EA2A7F, #f7aefd);
+      color: #ffffff;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      background: linear-gradient(to right, black,#EA2A7F, #f7aefd);
-      color: #000000;
+      gap: 10px;
       font-weight: 500;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .redes-sociais {
+      display: flex;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .redes-sociais a {
+      color: white;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .redes-sociais a:hover {
+      color: #f7aefd;
+      background-color: rgb(0, 0, 0);
+      padding: 5px 12px;
+      border-radius: 8px;
+    }
+
+    /* Estilo para os ícones */
+    .redes-sociais i {
+      font-size: 36px;  /* Tamanho do ícone */
+      color: white;     /* Cor dos ícones */
     }
 
     @media only screen and (max-width: 923px) {
@@ -142,9 +263,13 @@
         top: 15px;
       }
 
+      .container-principal {
+        flex-direction: column;
+        align-items: center;
+      }
+
       main {
         padding: 20px;
-        justify-content: center;
       }
 
       .video-top {
@@ -153,11 +278,12 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <a href="#" id="logo">
-      <img src="imagens/vegas.png" alt="logo sapatos" />
-      <img src="./imagens/vegas_store.png">
+      <img src="imagens/vegas.png" alt="Logo Vegas Store" />
+      <img src="imagens/vegas_store.png" alt="Logo Vegas Store 2" />
     </a>
     <button id="openMenu">&#9776;</button>
     <nav id="menu">
@@ -170,15 +296,49 @@
   </header>
 
   <main>
-    <div class="video-top">
-      <video controls autoplay muted>
-        <source src="./vídeos/WhatsApp Video 2025-04-24 at 16.27.54.mp4" type="video/mp4" />
-      </video>
+    <div class="container-principal">
+
+      <div class="video-top">
+        <video autoplay muted loop>
+          <source src="./vídeos/vídeo-vegas.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="lado-direito">
+        <div class="texto-apresentacao">
+          <h1>Bem-vindo à Vegas Store!</h1>
+          <h2>Moda que inspira confiança.</h2>
+          <p>Explore o melhor da moda e dos acessórios que combinam com seu estilo único.
+            Oferecemos produtos de alta qualidade, com um toque de exclusividade que você merece.</p>
+        </div>
+
+        <div class="banner-promocao">
+          <h3>Ofertas Especiais</h3>
+          <p><strong>Frete Grátis</strong> para compras acima de <strong>R$500</strong>.</p>
+          <p>Use o cupom <strong>PRIMEIRA10</strong> e ganhe <strong>10% OFF</strong> na primeira compra.</p>
+          <p>Pagando no <strong>PIX</strong>, utilize o cupom <strong>PIX5</strong> para <strong>5% OFF</strong>.</p>
+        </div>
+
+        <div class="carrossel-imagens">
+          <div class="carrossel-container">
+            <img src="imagens/banner-cupom.webp" alt="Promoção Primeira Compra Vegas Store" />
+            <img src="imagens/banner-frete.webp" alt="Promoção Frete Grátis" />
+            <img src="imagens/banner-garrafa.webp" alt="Promoção Garrafa Vegas" />
+          </div>
+          <button class="voltar" onclick="moverCarrossel(-1)">&#10094;</button>
+          <button class="avançar" onclick="moverCarrossel(1)">&#10095;</button>
+        </div>
+      </div>
+
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Vegas Store</p>
+    <p>&copy; 2025 Vegas Store | Todos os direitos reservados</p>
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/vegasstoore?igsh=MW1xb3YwNTQ3bDV1cg=="><i class="fab fa-instagram"></i></a>
+      <a href="+55 (62) 9 9335-3986"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </footer>
 
   <script>
@@ -204,6 +364,21 @@
         openMenu.removeAttribute("style");
       }, 200);
     });
+
+    let indiceAtual = 0;
+
+    function moverCarrossel(direcao) {
+      const carrossel = document.querySelector(".carrossel-container");
+      const imagens = carrossel.querySelectorAll("img");
+      const totalImagens = imagens.length;
+
+      indiceAtual = (indiceAtual + direcao + totalImagens) % totalImagens;
+      carrossel.style.transform = `translateX(-${indiceAtual * 100}%)`;
+    }
+
+    setInterval(() => { 
+      moverCarrossel(1);
+    }, 4000); // Troca a imagem a cada 4 segundos
   </script>
 </body>
 </html>
