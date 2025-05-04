@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vegas Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1{
+        color: rgb(126, 30, 89);
+        font-family: "Poppins", sans-serif;    
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#" id="logo">
+      <img src="./imagens/vegas.png" alt="Logo Vegas Store" />
+      <img src="./imagens/vegas_store.png" alt="Logo Vegas Store 2" />
+    </a>
+    <button id="openMenu">&#9776;</button>
+    <nav id="menu">
+      <button id="closeMenu">X</button>
+      <a href="index.html">Início</a>  
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sobre</h1>
+    <p><br>Fundada por Guordana Victoria Rocha da Silva em 2022, nossa loja nasceu com o objetivo de oferecer aos nossos clientes produtos de qualidade e estilo. No começo, como toda jornada, iniciamos com uma proposta simples e com algumas limitações de qualidade. Contudo, a paixão por oferecer o melhor e o desejo de aprender nos impulsionaram a conhecer cada vez mais o mercado de moda e a indústria de calçados.
+
+     <br><br>Com o tempo, nos dedicamos a pesquisar e entender as melhores opções de fornecedores, materiais e técnicas para proporcionar não só conforto e estilo, mas também a melhor qualidade fabricada no Brasil. Hoje, nossa loja é reconhecida por levar aos nossos clientes os modelos mais modernos e de alta performance, sempre com um olhar cuidadoso sobre o que há de mais inovador e sofisticado no mercado.
+        
+        <br><br>A nossa missão é fazer com que cada cliente se sinta único, seja através de um tênis exclusivo, de uma peça de vestuário única ou de um atendimento personalizado. Cada detalhe é pensado com carinho para atender às expectativas de quem busca qualidade, conforto e, claro, estilo.
+        
+       <br><br>Nosso compromisso com a qualidade premium e o atendimento excepcional é o que nos faz diferentes. E com muito orgulho, podemos dizer que estamos só começando. O futuro da nossa loja é cheio de oportunidades, e estamos ansiosos para continuar crescendo e oferecendo o melhor para vocês, nossos clientes.  </p>
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 Vegas Store | Todos os direitos reservados </p>
+    <section id="contato">
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/vegasstoore?igsh=MW1xb3YwNTQ3bDV1cg==" target="_blank" class="instagram"> <i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/556291693484?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Vegas%20Store!" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i></a>
+
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const menu = document.getElementById("menu");
+
+    openMenu.addEventListener("click", () => {
+      menu.style.display = "flex";
+      menu.style.right = menu.offsetWidth * -1 + "px";
+      openMenu.style.display = "none";
+      setTimeout(() => {
+        menu.style.opacity = "1";
+        menu.style.right = "0";
+      }, 10);
+    });
+
+    closeMenu.addEventListener("click", () => {
+      menu.style.opacity = "0";
+      menu.style.right = menu.offsetWidth * -1 + "px";
+      setTimeout(() => {
+        menu.removeAttribute("style");
+        openMenu.removeAttribute("style");
+      }, 200);
+    });
+
+    let indiceAtual = 0;
+
+    function moverCarrossel(direcao) {
+      const carrossel = document.querySelector(".carrossel-container");
+      const imagens = carrossel.querySelectorAll("img");
+      const totalImagens = imagens.length;
+
+      indiceAtual = (indiceAtual + direcao + totalImagens) % totalImagens;
+      carrossel.style.transform = `translateX(-${indiceAtual * 100}%)`;
+    }
+
+    setInterval(() => { 
+      moverCarrossel(1);
+    }, 4000); // Troca a imagem a cada 4 segundos
+  </script>
+</body>
+</html>

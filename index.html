@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vegas Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <a href="#" id="logo">
+      <img src="./imagens/vegas.png" alt="Logo Vegas Store" />
+      <img src="./imagens/vegas_store.png" alt="Logo Vegas Store 2" />
+    </a>
+    <button id="openMenu">&#9776;</button>
+    <nav id="menu">
+      <button id="closeMenu">X</button>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container-principal">
+
+      <div class="video-top">
+        <video autoplay muted loop>
+          <source src="./vídeos/vídeo-vegas.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="lado-direito">
+        <div class="texto-apresentacao">
+          <section id="inicio">
+          <h1>Bem-vindo à Vegas Store!</h1>
+          <h2>Moda que inspira confiança.</h2>
+          <p>Explore o melhor da moda e dos acessórios que combinam com seu estilo único.
+            Oferecemos produtos de alta qualidade, com um toque de exclusividade que você merece.</p>
+          </section>
+        </div>
+
+        <div class="banner-promocao">
+          <h3>Ofertas Especiais</h3>
+          <p><strong>Frete Grátis</strong> para compras acima de <strong>R$500</strong>.</p>
+          <p>Use o cupom <strong>PRIMEIRA10</strong> e ganhe <strong>10% OFF</strong> na primeira compra.</p>
+          <p>Pagando no <strong>PIX</strong>, utilize o cupom <strong>PIX5</strong> para <strong>5% OFF</strong>.</p>
+        </div>
+
+        <div class="carrossel-imagens">
+          <div class="carrossel-container">
+            <img src="./imagens/banner-cupom.webp" alt="Promoção Primeira Compra Vegas Store" />
+            <img src="./imagens/banner-frete.webp" alt="Promoção Frete Grátis" />
+            <img src="./imagens/banner-garrafa.webp" alt="Promoção Garrafa Vegas" />
+          </div>
+          <button class="voltar" onclick="moverCarrossel(-1)">&#10094;</button>
+          <button class="avançar" onclick="moverCarrossel(1)">&#10095;</button>
+        </div>
+      </div>
+
+    </div>
+   <div class="texto-produto">
+    <section id="produtos">
+    <h1>PRODUTOS</h1>
+  </section>
+   </div>
+  
+
+  <section>
+    <div class="produtos-geral">
+      <!-- Produto 1 -->
+      <div class="produtos">
+        <img src="./imagens/nb9060.webp" alt="NB 9060 Branco & Rosa" class="produto-imagem"/>
+        <h3 class="titulo-produto">NB 9060 Branco & Rosa</h3>
+        <p class="preco-produto"><span class="novo-preco">R$230,00</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 2 -->
+      <div class="produtos">
+        <img src="./imagens/tenis2.webp" alt="Vans KNU White" class="produto-imagem"/>
+        <h3 class="titulo-produto">Vans KNU White</h3>
+        <p class="preco-produto"><span class="novo-preco">R$179,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 3 -->
+      <div class="produtos">
+        <img src="./imagens/nb9060-bege.webp" alt="NB 9060 Beige" class="produto-imagem"/>
+        <h3 class="titulo-produto">NB 9060 Beige</h3>
+        <p class="preco-produto"><span class="novo-preco">R$230,00</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 4 com desconto -->
+      <div class="produtos">
+        <img src="./imagens/air-jordan-low-azul.webp" alt="Air jordan low 1 azul" class="produto-imagem"/>
+        <h3 class="titulo-produto">Air jordan low 1 azul</h3>
+        <p class="preco-produto">
+          <span class="antigo-preco">R$200,00</span>
+          <span class="novo-preco">R$179,90</span>
+        </p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+
+       <!-- Produto 5 -->
+      <div class="produtos">
+        <img src="./imagens/Air-jordan-high1-preto.webp" alt="Air jordan high 1 preto" class="produto-imagem"/>
+        <h3 class="titulo-produto">Air jordan high 1 preto</h3>
+        <p class="preco-produto"><span class="novo-preco">R$199,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 6 -->
+      <div class="produtos">
+        <img src="./imagens/Nike-Dunk-Azul.webp" alt="Nike Dunk Azul" class="produto-imagem"/>
+        <h3 class="titulo-produto">Nike Dunk Azul</h3>
+        <p class="preco-produto"><span class="novo-preco">R$149,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 7 -->
+      <div class="produtos">
+        <img src="./imagens/Adidas-Campus -00's-vermelho.webp" alt="Adidas Campus 00's Vermelho" class="produto-imagem"/>
+        <h3 class="titulo-produto">Adidas Campus 00's Vermelho</h3>
+        <p class="preco-produto"><span class="novo-preco">R$199,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 8 com desconto -->
+      <div class="produtos">
+        <img src="./imagens/NB 9060 Preto e Branco.webp" alt="NB 9060 Preto e Branco" class="produto-imagem"/>
+        <h3 class="titulo-produto">NB 9060 Preto e Branco</h3>
+        <p class="preco-produto">
+          <span class="antigo-preco">R$230,00</span>
+          <span class="novo-preco">R$199,90</span>
+        </p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+
+       <!-- Produto 9 -->
+      <div class="produtos">
+        <img src="./imagens/NB-9060-White.webp" alt="NB 9060 White" class="produto-imagem"/>
+        <h3 class="titulo-produto">NB 9060 White</h3>
+        <p class="preco-produto"><span class="novo-preco">R$199,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 10 -->
+      <div class="produtos">
+        <img src="./imagens/Adidas-Bad-Bunny.webp" alt="Adidas Bad Bunny Campus" class="produto-imagem"/>
+        <h3 class="titulo-produto">Adidas Bad Bunny Campus</h3>
+        <p class="preco-produto"><span class="novo-preco">R$230,00</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 11 -->
+      <div class="produtos">
+        <img src="./imagens/Nike Dunk Baunilha.webp" alt="Nike Dunk baunilha" class="produto-imagem"/>
+        <h3 class="titulo-produto">Nike Dunk baunilha</h3>
+        <p class="preco-produto"><span class="novo-preco">R$149,90</span></p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+  
+      <!-- Produto 12 com desconto -->
+      <div class="produtos">
+        <img src="./imagens/Air force Branco.webp" alt="Air force branco" class="produto-imagem"/>
+        <h3 class="titulo-produto">Air force branco</h3>
+        <p class="preco-produto">
+          <span class="antigo-preco">R$200,00</span>
+          <span class="novo-preco">R$149,90</span>
+        </p>
+        <button class="botao-de-compra">Comprar</button>
+      </div>
+    </div>
+  </section>
+  </main>
+  <div class="go-pra-cima">
+    <i class="icon ion-md-arrow-up">  </i>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Vegas Store | Todos os direitos reservados </p>
+    <section id="contato">
+    <div class="redes-sociais">
+      <a href="https://www.instagram.com/vegasstoore?igsh=MW1xb3YwNTQ3bDV1cg==" target="_blank" class="instagram"> <i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/556291693484?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Vegas%20Store!" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i></a>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const menu = document.getElementById("menu");
+
+    openMenu.addEventListener("click", () => {
+      menu.style.display = "flex";
+      menu.style.right = menu.offsetWidth * -1 + "px";
+      openMenu.style.display = "none";
+      setTimeout(() => {
+        menu.style.opacity = "1";
+        menu.style.right = "0";
+      }, 10);
+    });
+
+    closeMenu.addEventListener("click", () => {
+      menu.style.opacity = "0";
+      menu.style.right = menu.offsetWidth * -1 + "px";
+      setTimeout(() => {
+        menu.removeAttribute("style");
+        openMenu.removeAttribute("style");
+      }, 200);
+    });
+
+    let indiceAtual = 0;
+
+    function moverCarrossel(direcao) {
+      const carrossel = document.querySelector(".carrossel-container");
+      const imagens = carrossel.querySelectorAll("img");
+      const totalImagens = imagens.length;
+
+      indiceAtual = (indiceAtual + direcao + totalImagens) % totalImagens;
+      carrossel.style.transform = `translateX(-${indiceAtual * 100}%)`;
+    }
+
+    setInterval(() => { 
+      moverCarrossel(1);
+    }, 4000); // Troca a imagem a cada 4 segundos
+  </script>
+</body>
+</html>
